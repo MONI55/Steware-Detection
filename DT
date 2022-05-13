@@ -1,0 +1,17 @@
+import pandas as pd  
+from sklearn.tree import DecisionTreeClassifier  
+from sklearn.tree import DecisionTreeRegressor  
+#loading my train dataset into python 
+ train = pd.read_csv('stegotraingod.csv') 
+test = pd.read_csv('stego1.csv') 
+ #factors that will predict the price 
+desired_factors = ['Attr_1','Attr_2','Attr_3','Attr_4','Attr_5','Attr_6','Attr_7','Attr_8','Attr_9','Attr_10','Attr_11','Attr_12','Attr_13','Attr_14','Attr_15','Attr_16','Attr_17','Attr_18','Attr_19','Attr_20','Attr_21','Attr_22','Attr_23','Attr_24','Attr_25','Attr_26','Attr_27','Attr_28','Attr_29','Attr_30','Attr_31','Attr_32','Attr_33','Attr_34','Attr_35','Attr_36','Attr_37','Attr_38','Attr_39','Attr_40','Attr_41','Attr_42','Attr_43','Attr_44','Attr_45','Attr_46','Attr_47','Attr_48','Attr_49','Attr_50','Attr_51','Attr_52','Attr_53','Attr_54','Attr_55', 'Attr_56','Attr_57','Attr_58','Attr_59','Attr_60','Attr_61','Attr_62','Attr_63','Attr_64', 'Attr_65','Attr_66','Attr67,'Attr_68','Attr_69',''Class'] 
+  #set my model to DecisionTree 
+model = DecisionTreeRegressor() 
+ #set prediction data to factors that will predict, and set target to SalePrice 
+train_data = train[desired_factors] 
+test_data = test[desired_factors] 
+target = train.Class 
+  #fitting model with prediction data and telling it my target 
+model.fit(train_data, target) 
+  model.predict(test_data.head()) 

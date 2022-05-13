@@ -1,0 +1,21 @@
+
+
+## ENCODING FILES
+
+out = open("C:/Users/MONIKA/Desktop/wrok 1 imp/malimage.png", "wb")
+out.write(open("C:/Users/MONIKA/Desktop/wrok 1 imp/in.png", "rb").read())
+out.write(open("C:/Users/MONIKA/Desktop/wrok 1 imp/mcpatcher.exe.zip", "rb").read())
+out.close()
+
+
+
+###DECODING FILES
+
+## KALI LINUX
+
+## i - input
+## o - output
+
+cd Desktop
+foremost  -t rar -i  imagename.extention -o foldername for output
+
